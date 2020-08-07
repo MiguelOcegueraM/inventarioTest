@@ -14,7 +14,7 @@
 			<form class="form-horizontal" method="post" id="editar_categoria" name="editar_categoria">
 			<div id="resultados_ajax2"></div>
 			  <div class="form-group">
-				<label for="mod_nombre" class="col-sm-3 control-label">Nombre</label>
+				<label for="mod_nombre" class="col-sm-3 control-label">Nombre: </label>
 				<div class="col-sm-8">
 				  <input type="text" class="form-control" id="mod_nombre" name="mod_nombre"  required>
 					<input type="hidden" name="mod_id" id="mod_id">
@@ -24,7 +24,7 @@
 			  
 			 
 			  <div class="form-group">
-				<label for="mod_descripcion" class="col-sm-3 control-label">Descripción</label>
+				<label for="mod_descripcion" class="col-sm-3 control-label">Descripción: </label>
 				<div class="col-sm-8">
 				  <textarea class="form-control" id="mod_descripcion" name="mod_descripcion" ></textarea>
 				</div>

@@ -1,9 +1,4 @@
 <?php
-	/*-------------------------
-	Autor: Obed Alvarado
-	Web: obedalvarado.pw
-	Mail: info@obedalvarado.pw
-	---------------------------*/
 	session_start();
 	if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] != 1) {
         header("location: login.php");
@@ -18,7 +13,7 @@
 	$active_productos="active";
 	$active_clientes="";
 	$active_usuarios="";	
-	$title="Producto | Simple Stock";
+	$title="Producto";
 	
 	if (isset($_POST['reference']) and isset($_POST['quantity'])){
 		$quantity=intval($_POST['quantity']);
@@ -86,7 +81,8 @@
           <div class="panel-body">
             <div class="row">
               <div class="col-sm-4 col-sm-offset-2 text-center">
-				 <img class="item-img img-responsive" src="img/stock.png" alt=""> 
+				 <!-- <img class="item-img img-responsive" src="data:image/jpg;base64, echo base64_encode($row'imagen_producto');?>" width="600" height="481" alt=""> -->
+				 <img class="item-img img-responsive" src="img/stock.png" width="600" height="481" alt="">
 				  <br>
                     <a href="#" class="btn btn-danger" onclick="eliminar('<?php echo $row['id_producto'];?>')" title="Eliminar"> <i class="glyphicon glyphicon-trash"></i> Eliminar </a> 
 					<a href="#myModal2" data-toggle="modal" data-codigo='<?php echo $row['codigo_producto'];?>' data-nombre='<?php echo $row['nombre_producto'];?>' data-categoria='<?php echo $row['id_categoria']?>' data-precio='<?php echo $row['precio_producto']?>' data-stock='<?php echo $row['stock'];?>' data-id='<?php echo $row['id_producto'];?>' class="btn btn-info" title="Editar"> <i class="glyphicon glyphicon-pencil"></i> Editar </a>	
@@ -99,7 +95,7 @@
                       <span class="item-title"> <?php echo $row['nombre_producto'];?></span>
                     </div>
                     <div class="col-sm-12 margin-btm-10">
-                      <span class="item-number"><?php echo $row['codigo_producto'];?></span>
+                      <span class="item-number">Codigo: <?php echo $row['codigo_producto'];?></span>
                     </div>
                     <div class="col-sm-12 margin-btm-10">
                     </div>
@@ -107,7 +103,7 @@
                       <span class="current-stock">Stock disponible</span>
                     </div>
                     <div class="col-sm-12 margin-btm-10">
-                      <span class="item-quantity"><?php echo number_format($row['stock'],2);?></span>
+                      <span class="item-quantity"><?php echo number_format($row['stock'], 0);?> piezas.</span>
                     </div>
 					<div class="col-sm-12">
                       <span class="current-stock"> Precio venta  </span>
@@ -119,10 +115,10 @@
                     <div class="col-sm-12 margin-btm-10">
 					</div>
                     <div class="col-sm-6 col-xs-6 col-md-4 ">
-                      <a href="" data-toggle="modal" data-target="#add-stock"><img width="100px"  src="img/stock-in.png"></a>
+                      <a href="" data-toggle="modal" data-target="#add-stock"><img width="100px"  src="img/stock-in2.png"></a>
                     </div>
                     <div class="col-sm-6 col-xs-6 col-md-4">
-                      <a href="" data-toggle="modal" data-target="#remove-stock"><img width="100px"  src="img/stock-out.png"></a>
+                      <a href="" data-toggle="modal" data-target="#remove-stock"><img width="100px"  src="img/stock-out2.png"></a>
                     </div>
                     <div class="col-sm-12 margin-btm-10">
                     </div>
@@ -245,7 +241,7 @@ $( "#editar_producto" ).submit(function( event ) {
 	
 	function eliminar (id){
 		var q= $("#q").val();
-		if (confirm("Realmente deseas eliminar el producto")){	
+		if (confirm("¿Realmente deseas eliminar el producto?")){	
 			location.replace('stock.php?delete='+id);
 		}
 	}

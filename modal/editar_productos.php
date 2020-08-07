@@ -14,24 +14,24 @@
 			<form class="form-horizontal" method="post" id="editar_producto" name="editar_producto">
 			<div id="resultados_ajax2"></div>
 			  <div class="form-group">
-				<label for="mod_codigo" class="col-sm-3 control-label">Código</label>
+				<label for="mod_codigo" class="col-sm-3 control-label">Código: </label>
 				<div class="col-sm-8">
 				  <input type="text" class="form-control" id="mod_codigo" name="mod_codigo" placeholder="Código del producto" required>
 					<input type="hidden" name="mod_id" id="mod_id">
 				</div>
 			  </div>
 			   <div class="form-group">
-				<label for="mod_nombre" class="col-sm-3 control-label">Nombre</label>
+				<label for="mod_nombre" class="col-sm-3 control-label">Nombre: </label>
 				<div class="col-sm-8">
 				  <textarea class="form-control" id="mod_nombre" name="mod_nombre" placeholder="Nombre del producto" required></textarea>
 				</div>
 			  </div>
 			  
 			  <div class="form-group">
-				<label for="mod_categoria" class="col-sm-3 control-label">Categoría</label>
+				<label for="mod_categoria" class="col-sm-3 control-label">Categoría: </label>
 				<div class="col-sm-8">
 					<select class='form-control' name='mod_categoria' id='mod_categoria' required>
-						<option value="">Selecciona una categoría</option>
+						<option value="">Selecciona una categoría: </option>
 							<?php 
 							$query_categoria=mysqli_query($con,"select * from categorias order by nombre_categoria");
 							while($rw=mysqli_fetch_array($query_categoria))	{
@@ -45,16 +45,23 @@
 			  </div>
 			  
 			  <div class="form-group">
-				<label for="mod_precio" class="col-sm-3 control-label">Precio</label>
+				<label for="mod_precio" class="col-sm-3 control-label">Precio: </label>
 				<div class="col-sm-8">
 				  <input type="text" class="form-control" id="mod_precio" name="mod_precio" placeholder="Precio de venta del producto" required pattern="^[0-9]{1,5}(\.[0-9]{0,2})?$" title="Ingresa sólo números con 0 ó 2 decimales" maxlength="8">
 				</div>
 			  </div>
 			 
 			 <div class="form-group">
-				<label for="mod_stock" class="col-sm-3 control-label">Stock</label>
+				<label for="mod_stock" class="col-sm-3 control-label">Cantidad en stock: </label>
 				<div class="col-sm-8">
 				  <input type="number" min="0" class="form-control" id="mod_stock" name="mod_stock" placeholder="Inventario inicial" required  maxlength="8" readonly>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="stock" class="col-sm-3 control-label">Imagen del producto: </label>
+				<div class="col-sm-8">
+				  <input type="file" min="0" class="form-control" id="stock" name="imagen" placeholder="imagen_producto">
 				</div>
 			</div>
 			 

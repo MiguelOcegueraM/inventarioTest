@@ -20,7 +20,7 @@
 
 		function eliminar(id) {
 		    var q = $("#q").val();
-		    if (confirm("Realmente deseas eliminar el usuario")) {
+		    if (confirm("¿Realmente deseas eliminar el usuario?")) {
 		        $.ajax({
 		            type: "GET",
 		            url: "./ajax/buscar_usuarios.php",

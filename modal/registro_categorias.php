@@ -14,7 +14,7 @@
 			<form class="form-horizontal" method="post" id="guardar_categoria" name="guardar_categoria">
 			<div id="resultados_ajax"></div>
 			  <div class="form-group">
-				<label for="nombre" class="col-sm-3 control-label">Nombre</label>
+				<label for="nombre" class="col-sm-3 control-label">Nombre: </label>
 				<div class="col-sm-8">
 				  <input type="text" class="form-control" id="nombre" name="nombre" required>
 				</div>
@@ -22,7 +22,7 @@
 			 
 				  
 			  <div class="form-group">
-				<label for="descripcion" class="col-sm-3 control-label">Descripción</label>
+				<label for="descripcion" class="col-sm-3 control-label">Descripción: </label>
 				<div class="col-sm-8">
 					<textarea class="form-control" id="descripcion" name="descripcion"   maxlength="255" ></textarea>
 				  

@@ -11,6 +11,7 @@ http://work.smarchal.com/twbscolor/
 
 .navbar-default .navbar-brand {
     color: #f7f7f7;
+    height: 63px;
 }
 
 .navbar-default .navbar-brand:hover,
@@ -161,4 +162,15 @@ http://work.smarchal.com/twbscolor/
 
 a {
     color: #7474C1;
+}
+
+.panel-success>.panel-heading {
+    color: #7474C1;
+    background-color: #7474C1;
+}
+
+.panel-success>.panel-heading {
+    color: #7474C1;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
 }

@@ -12,8 +12,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a  href="index.php">
-        <img class="navbar-brand" src="img/pepslogo.png" alt="logo">
+      <a  href="index.php" >
+        <img class="navbar-brand" id="logo" src="img/pepslogo.png" alt="logo">
       </a>
     </div>
 
@@ -21,11 +21,11 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="<?php if (isset($active_productos)){echo $active_productos;}?>"><a href="stock.php"><i class='glyphicon glyphicon-barcode'></i> Inventario</a></li>
-		<li class="<?php if (isset($active_categoria)){echo $active_categoria;}?>"><a href="categorias.php"><i class='glyphicon glyphicon-tags'></i> Categorías</a></li>
-		<li class="<?php if (isset($active_usuarios)){echo $active_usuarios;}?>"><a href="usuarios.php"><i  class='glyphicon glyphicon-user'></i> Usuarios</a></li>
+        <li class="<?php if (isset($active_categoria)){echo $active_categoria;}?>"><a href="categorias.php"><i class='glyphicon glyphicon-tags'></i> Categorías</a></li>
+        <!--<li class="<?php if (isset($active_usuarios)){echo $active_usuarios;}?>"><a href="usuarios.php"><i  class='glyphicon glyphicon-user'></i> Usuarios</a></li> -->
        </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="http://tscom.co/" target='_blank'><i class='glyphicon glyphicon-envelope'></i> Soporte</a></li>
+        <li><a href="http://tscom.co/contacto.php" target='_blank'><i class='glyphicon glyphicon-envelope'></i> Soporte</a></li>
 		<li><a href="login.php?logout"><i class='glyphicon glyphicon-off'></i> Salir</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->

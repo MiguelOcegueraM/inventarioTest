@@ -26,6 +26,7 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 		$stock=intval($_POST['stock']);
 		$id_categoria=intval($_POST['categoria']);
 		$precio_venta=floatval($_POST['precio']);
+		//$imagen_producto = addslashes(file_get_contents($_FILES['imagen_producto']['tmp_name']));
 		$date_added=date("Y-m-d H:i:s");
 		
 		$sql="INSERT INTO products (codigo_producto, nombre_producto, date_added, precio_producto, stock, id_categoria) VALUES ('$codigo','$nombre','$date_added','$precio_venta', '$stock','$id_categoria')";
