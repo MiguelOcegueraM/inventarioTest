@@ -36,8 +36,10 @@ include('is_logged.php');//Archivo verifica que el usario que intenta acceder a 
 				$id_producto=get_row('products','id_producto', 'codigo_producto', $codigo);
 				$user_id=$_SESSION['user_id'];
 				$firstname=$_SESSION['firstname'];
+				$cliente = $_SESSION['user_id'];
+				$proveedor = $_SESSION['user_id'];
 				$nota="$firstname agregó $stock producto(s) al inventario";
-				echo guardar_historial($id_producto,$user_id,$date_added,$nota,$codigo,$stock);
+				echo guardar_historial($id_producto,$user_id,$date_added,$nota,$codigo,$stock,$cliente, $proveedor);
 				
 			} else{
 				$errors []= "Lo siento algo ha salido mal intenta nuevamente.".mysqli_error($con);

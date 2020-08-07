@@ -24,7 +24,7 @@
 		$user_id=$_SESSION['user_id'];
 		$firstname=$_SESSION['firstname'];
 		$nota="$worker agregó $quantity producto(s) al inventario del proveedor $client";
-		$fecha=date("Y-m-d H:i:s");
+		$fecha=date("Y-m-d h:i:s");
 		guardar_historial($id_producto,$user_id,$fecha,$nota,$reference,$quantity,$client,$worker);
 		$update=agregar_stock($id_producto, $quantity);
 		if ($update==1){
@@ -43,7 +43,7 @@
 		$user_id=$_SESSION['user_id'];
 		$firstname=$_SESSION['firstname'];
 		$nota="$worker retiró $quantity producto(s) del inventario para el cliente $client";
-		$fecha=date("Y-m-d H:i:s");
+		$fecha=date("Y-m-d h:i:s");
 		guardar_historial($id_producto,$user_id,$fecha,$nota,$reference,$quantity,$client,$worker);
 		$update=eliminar_stock($id_producto,$quantity);
 		if ($update==1){
@@ -85,7 +85,7 @@
           <div class="panel-body">
             <div class="row">
               <div class="col-sm-4 col-sm-offset-2 text-center">
-				 <!-- <img class="item-img img-responsive" src="data:image/jpg;base64, echo base64_encode($row'imagen_producto');?>" width="600" height="481" alt=""> -->
+				 <!-- <img class="item-img img-responsive" src="data:image/jpg;base64, echo base64_encode($row'imagen_producto');?>" width="600" height="481" alt="">-->
 				 <img class="item-img img-responsive" src="img/stock.png" width="600" height="481" alt="">
 				  <br>
                     <a href="#" class="btn btn-danger" onclick="eliminar('<?php echo $row['id_producto'];?>')" title="Eliminar"> <i class="glyphicon glyphicon-trash"></i> Eliminar </a> 
@@ -160,7 +160,7 @@
 						</tr>
 						<tr>
 							<td>Fecha</td>
-							<td>Hora</td>
+							<!-- <td>Hora</td>-->
 							<td>Descripción</td>
 							<td>Referencia</td>
 							<td class='text-center'>Total</td>
@@ -171,7 +171,7 @@
 								?>
 						<tr>
 							<td><?php echo date('d/m/Y', strtotime($row['fecha']));?></td>
-							<td><?php echo date('H:i:s', strtotime($row['fecha']));?></td>
+							<!--<td> echo date('h:i:s', strtotime$row'fecha';?></td>-->
 							<td><?php echo $row['nota'];?></td>
 							<td><?php echo $row['referencia'];?></td>
 							<td class='text-center'><?php echo number_format($row['cantidad'],2);?></td>
