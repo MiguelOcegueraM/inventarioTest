@@ -58,12 +58,12 @@
 				</div>
 			</div>
 
-			<div class="form-group">
+			<!-- <div class="form-group">
 				<label for="stock" class="col-sm-3 control-label">Imagen del producto: </label>
 				<div class="col-sm-8">
 				  <input type="file" min="0" class="form-control" id="stock" name="imagen" placeholder="imagen_producto">
 				</div>
-			</div>
+			</div> -->
 			 
 			
 		  </div>

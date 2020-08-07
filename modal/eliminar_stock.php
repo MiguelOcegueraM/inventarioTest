@@ -23,6 +23,18 @@
               <input type="text" name="reference_remove" class="form-control" id="reference_remove" value="" placeholder="Referencia">
             </div>
           </div>
+          <div class="form-group">
+            <label for="reference" class="col-sm-2 control-label">Usuario: </label>
+            <div class="col-sm-6">
+              <input type="text" name="name_user_remove" class="form-control" id="name_user_remove" value="" placeholder="Nombre del trabajador" required="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="reference" class="col-sm-2 control-label">Cliente: </label>
+            <div class="col-sm-6">
+              <input type="text" name="name_client_remove" class="form-control" id="name_client_remove" value="" placeholder="Factura o Nombre del cliente">
+            </div>
+          </div>
           
         
       </div>

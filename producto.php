@@ -18,13 +18,15 @@
 	if (isset($_POST['reference']) and isset($_POST['quantity'])){
 		$quantity=intval($_POST['quantity']);
 		$reference=mysqli_real_escape_string($con,(strip_tags($_POST["reference"],ENT_QUOTES)));
+		$client=mysqli_real_escape_string($con,(strip_tags($_POST["name_client"],ENT_QUOTES)));
+		$worker=mysqli_real_escape_string($con,(strip_tags($_POST["name_user"],ENT_QUOTES)));
 		$id_producto=intval($_GET['id']);
 		$user_id=$_SESSION['user_id'];
 		$firstname=$_SESSION['firstname'];
-		$nota="$firstname agregó $quantity producto(s) al inventario";
+		$nota="$worker agregó $quantity producto(s) al inventario del proveedor $client";
 		$fecha=date("Y-m-d H:i:s");
-		guardar_historial($id_producto,$user_id,$fecha,$nota,$reference,$quantity);
-		$update=agregar_stock($id_producto,$quantity);
+		guardar_historial($id_producto,$user_id,$fecha,$nota,$reference,$quantity,$client,$worker);
+		$update=agregar_stock($id_producto, $quantity);
 		if ($update==1){
 			$message=1;
 		} else {
@@ -35,12 +37,14 @@
 	if (isset($_POST['reference_remove']) and isset($_POST['quantity_remove'])){
 		$quantity=intval($_POST['quantity_remove']);
 		$reference=mysqli_real_escape_string($con,(strip_tags($_POST["reference_remove"],ENT_QUOTES)));
+		$client=mysqli_real_escape_string($con,(strip_tags($_POST["name_client_remove"],ENT_QUOTES)));
+		$worker=mysqli_real_escape_string($con,(strip_tags($_POST["name_user_remove"],ENT_QUOTES)));
 		$id_producto=intval($_GET['id']);
 		$user_id=$_SESSION['user_id'];
 		$firstname=$_SESSION['firstname'];
-		$nota="$firstname eliminó $quantity producto(s) del inventario";
+		$nota="$worker retiró $quantity producto(s) del inventario para el cliente $client";
 		$fecha=date("Y-m-d H:i:s");
-		guardar_historial($id_producto,$user_id,$fecha,$nota,$reference,$quantity);
+		guardar_historial($id_producto,$user_id,$fecha,$nota,$reference,$quantity,$client,$worker);
 		$update=eliminar_stock($id_producto,$quantity);
 		if ($update==1){
 			$message=1;

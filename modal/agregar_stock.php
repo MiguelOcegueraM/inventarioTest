@@ -23,6 +23,18 @@
               <input type="text" name="reference" class="form-control" id="reference" value="" placeholder="Referencia">
             </div>
           </div>
+          <div class="form-group">
+            <label for="reference" class="col-sm-2 control-label">Usuario: </label>
+            <div class="col-sm-6">
+              <input type="text" name="name_user" class="form-control" id="name_user" value="" placeholder="Nombre del trabajador" required="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="reference" class="col-sm-2 control-label">Proveedor: </label>
+            <div class="col-sm-6">
+              <input type="text" name="name_client" class="form-control" id="name_client" value="" placeholder="Factura o Nombre del proveedor">
+            </div>
+          </div>
           
        
       </div>
